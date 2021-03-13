@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.principal {
+    height: 100%;
+    height: 100vh;
+    background-image: linear-gradient( -300deg, #0f0b4b 20%, #8b0a0a 51%, #c55353 100%);
+    display: flex;
+}
+
+.text-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.text-container h1 {
+    font: size 70px;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+}
+
+.wave-design {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.galery {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.galery .picture {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin-bottom: 35px;
+    border-radius: 5px;
+    box-shadow: 0x 0px 6px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.6s ease;
+}
+
+.galery .picture:hover {
+    box-shadow: 0px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+.picture img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top, #cfd9df96 0%, #e2ebf0a1 100%);
+    width: 100%;
+    height: 0;
+    transition: 0.55s ease;
+    overflow: hidden;
+}
+
+.overlay h2 {
+    color: black;
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.picture:hover .overlay {
+    height: 100%;
+    cursor: pointer;
+    border-radius: 5px
+}
+
+
+/*---------------Abrir Imagenes----------------*/
+
+.modal-container.active {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.modal-container.active img {
+    z-index: 3;
+    width: 700px;
+    height: 700px;
+}
+
+.modal-container.active::after {
+    position: fixed;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(211, 211, 211, 0.459);
+}
